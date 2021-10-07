@@ -1,0 +1,31 @@
+<div class="container">
+  <button class="btn btn-success btnAdd" [routerLink]="['/add']">Add</button>
+  <table class="table table-dark table-bordered">
+    <tbody>
+      <tr class="table-primary text-dark">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Age</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <tr class="table-active" *ngFor="let emp of empList">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.job}}</td>
+        <td>{{emp.age}}</td>
+        <td><button class="btn btn-warning" [routerLink]="['/edit']" ng-click="EditEmp(Employee: Employee)">Edit</button></td>
+        <td><button class="btn btn-danger" ng-click="Delete()">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div #alert class="alert alert-danger alert-dismissible fade" role="alert">
+    <h4 class="alert-heading">Are You Sure To Delete ?!</h4>
+    <button class="btn btn-danger" ng-click="DeleteEmp(id:number)">Yes</button>
+    <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+  </div>
+
+</div>
+  
